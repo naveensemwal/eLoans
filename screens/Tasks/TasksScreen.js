@@ -63,15 +63,15 @@ const renderItem = ({ item, index }) => {
             <View>
                 <ListItem thumbnail>
                     <Left>
-                        <Thumbnail circular source={require("../../assets/images/list.png")} />
+                        <Thumbnail square source={require("../../assets/images/task_blue.png")} />
                     </Left>
                     <Body>
-                        <Text>{item.title}</Text>
+                        <Text style={{color:'#0052A2'}}>{item.title}</Text>
                         <Text note numberOfLines={3}>{item.description}</Text>
                     </Body>
                     <Right>
                         <Button transparent>
-                            <Text>View</Text>
+                            <Text style={{color:'#0052A2'}}>View</Text>
                         </Button>
                     </Right>
                 </ListItem>

@@ -18,22 +18,11 @@ import LoginScreen from '../screens/LoginScreen';
 import ProfileScreen from '../screens/Profile/Profile';
 import SearchScreen from '../screens/Search/SearchScreen';
 import NotificationsScreen from '../screens/Notifications/NotificationsScreen';
+import SupportingDcoumentsScreen from '../screens/InitiateCase/CaptureSupportingDcouments';
+import BureauScreen from '../screens/InitiateCase/BureauScreen';
+import EligibilityScreen from '../screens/InitiateCase/EligibilityScreen';
 
-// const AuthStack = createStackNavigator();
-// const AuthStackScreens = () => (
-//   <AuthStack.Navigator>
-//     <AuthStack.Screen
-//       name="SignIn"
-//       component={SignIn}
-//       options={{ title: "Sign In" }}
-//     />
-//     <AuthStack.Screen
-//       name="CreateAccount"
-//       component={CreateAccount}
-//       options={{ title: "Create Account" }}
-//     />
-//   </AuthStack.Navigator>
-// );
+
 
 const HomeTabStack = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
@@ -44,22 +33,32 @@ const InitiateCaseStack = createStackNavigator();
 const InitiateCaseStackScreen = () => (
   <InitiateCaseStack.Navigator mode="card">
     <InitiateCaseStack.Screen name="InitiateCase" component={InitiateCaseScreen} options={{
-      title: 'Initiate Case'
+      title: ''
     }} />
     <InitiateCaseStack.Screen name="CaptureAadhar" component={CaptureAadharScreen} options={{
-      title: 'Capture Aadhar Details'
+      title: ''
     }} />
     <InitiateCaseStack.Screen name="CapturePAN" component={CapturePANScreen} options={{
-      title: 'Capture PAN Details'
+      title: ''
+    }} />
+     <InitiateCaseStack.Screen name="CaptrueDocuments" component={SupportingDcoumentsScreen} options={{
+      title: ''
+    }} />
+     <InitiateCaseStack.Screen name="BureauScreen" component={BureauScreen} options={{
+      title: ""
     }} />
     <InitiateCaseStack.Screen name="PersonalDetail" component={PersonalDetailScreen} options={{
-      title: 'Personal Details'
+      title: ''
     }} />
     <InitiateCaseStack.Screen name="EmploymentDetail" component={EmploymentDetailScreen} options={{
-      title: 'Employment Details'
+      title: ''
+    }} />
+     <InitiateCaseStack.Screen name="EligibilityScreen" component={EligibilityScreen} options={{
+      title: ''
     }} />
     <InitiateCaseStack.Screen name="SubmitLoan" component={LoanSubmitScreen} options={{
-      title: 'Submit Loan Application'
+      title: 'Status',
+      headerLeft: null
     }} />
   </InitiateCaseStack.Navigator>
 
@@ -124,7 +123,7 @@ const TabsScreen = () => (
       },
     })}
     tabBarOptions={{
-      activeTintColor: 'tomato',
+      activeTintColor: '#0052A2',
       inactiveTintColor: 'gray',
     }}
   >

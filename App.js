@@ -12,6 +12,7 @@ import FormDataContextProvider from './contexts/FormDataContext';
 
 
 export default function App(props) {
+  console.disableYellowBox = true;
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
 
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, View, ImageBackground, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Card from '../../components/Card';
-import backGroundImage from '../../assets/images/loginBG.png'
+import backGroundImage from '../../assets/images/15389.png'
 
 
 const taskList = [
@@ -16,7 +16,7 @@ const taskList = [
     },
     {
         id: '2',
-        title: 'COVID 19 Guidelines',
+        title: 'COVID 19 guidelines',
         description: 'Non officia excepteur non nostrud.',
         loanType: 'Personal',
         date: '30 Apr'
@@ -33,7 +33,7 @@ const taskList = [
         title: 'Loan initiation for LAN 00456792  pending',
         description: 'Visit customer for  personal loan initiation.',
         loanType: 'Personal',
-        date: '24 Apr'
+        date: '24 Jun'
     },
 
 
@@ -45,21 +45,21 @@ const renderItem = ({ item, index }) => {
     return (
 
         <TouchableOpacity>
-            <Card style={{ paddingTop: 2 }} cardContent={{ marginHorizontal: 5 }}>
+            <Card style={{ paddingTop: 2,backgroundColor:'#7DBCDE' }} cardContent={{ marginHorizontal: 5 }}>
                 <View style={{ flexDirection: "row", paddingHorizontal: 5 }}>
                     <View style={{ flex: 1, paddingRight: 6 }}>
-                        <Thumbnail small source={require("../../assets/images/notification.png")} />
+                        <Thumbnail small source={require("../../assets/images/notification_blue.png")} />
                     </View>
                     <View style={{ flex: 8 }}>
                         <Text style={{ fontFamily: 'Roboto', fontWeight: "bold" }}>
                             {item.title}
                         </Text>
-                        <Text style={{ color: "grey", fontFamily: 'Roboto_medium', fontWeight: 'normal', fontSize: 12 }}>
+                        <Text style={{ color: "white", fontFamily: 'Roboto_medium', fontWeight: 'normal', fontSize: 12 }}>
                             {item.description}
                         </Text>
                     </View>
                     <View style={{ flex: 1, justifyContent: 'flex-start' }} >
-                        <Text style={{ color: "grey", fontFamily: 'Roboto_medium', fontWeight: 'normal', fontSize: 11 }}>
+                        <Text style={{ color: "white", fontFamily: 'Roboto_medium', fontWeight: 'normal', fontSize: 11 }}>
                             {item.date}
                         </Text>
                     </View>
@@ -73,11 +73,10 @@ const renderItem = ({ item, index }) => {
 const NotificationsScreen = props => {
     return (
         <View style={styles.container}>
-            <ImageBackground source={backGroundImage} style={styles.backgroundImage}>
+            {/* <ImageBackground source={backGroundImage} style={styles.backgroundImage}> */}
                 <List dataArray={taskList} renderItem={renderItem}>
-
                 </List>
-            </ImageBackground>
+            {/* </ImageBackground> */}
         </View>
     )
 }

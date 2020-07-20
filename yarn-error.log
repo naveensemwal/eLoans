@@ -1,30 +1,29 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @expo/vector-icons/Fontisto
+  C:\Program Files\nodejs\node.exe C:\Users\postgres\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Users\Naveen\AppData\Local\Android\Sdk\platform-tools;C:\Users\Naveen\AppData\Local\Microsoft\WindowsApps;C:\Users\Naveen\AppData\Roaming\npm;C:\Users\Naveen\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Naveen\AppData\Local\GitHubDesktop\bin;C:\Users\Naveen\AppData\Local\Yarn\bin;C:\Users\Naveen\AppData\Local\Android\Sdk\platform-tools;
+  C:\Python38\Scripts\;C:\Python38\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jre1.8.0_251\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Microsoft VS Code\bin;C:\Users\postgres\AppData\Local\Microsoft\WindowsApps;C:\Users\postgres\AppData\Roaming\npm
 
 Yarn version: 
   1.22.4
 
 Node version: 
-  12.13.1
+  12.18.1
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@expo%2fvector-icons/Fontisto: Request "https://registry.yarnpkg.com/@expo%2fvector-icons/Fontisto" returned a 405
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66105:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140748:22)
-      at Request.emit (events.js:210:5)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141720:10)
-      at Request.emit (events.js:210:5)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141642:12)
-      at Object.onceWrapper (events.js:299:28)
-      at IncomingMessage.emit (events.js:215:7)
-      at endReadableNT (_stream_readable.js:1184:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\postgres\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141375:19)
+      at Object.onceWrapper (events.js:421:28)
+      at ClientRequest.emit (events.js:315:20)
+      at TLSSocket.emitRequestTimeout (_http_client.js:709:9)
+      at Object.onceWrapper (events.js:421:28)
+      at TLSSocket.emit (events.js:327:22)
+      at TLSSocket.Socket._onTimeout (net.js:481:8)
+      at listOnTimeout (internal/timers.js:549:17)
+      at processTimers (internal/timers.js:492:7)
 
 npm manifest: 
   {
@@ -54,7 +53,7 @@ npm manifest:
       "expo-font": "~8.1.0",
       "expo-image-picker": "~8.1.0",
       "expo-web-browser": "~8.1.0",
-      "native-base": "^2.13.12",
+      "native-base": "2.13.8",
       "react": "~16.9.0",
       "react-dom": "~16.9.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
@@ -69,7 +68,8 @@ npm manifest:
       "react-navigation": "^4.3.8",
       "react-navigation-drawer": "^2.4.12",
       "react-navigation-stack": "^2.3.13",
-      "react-navigation-tabs": "^2.8.12"
+      "react-navigation-tabs": "^2.8.12",
+      "yarn": "^1.22.4"
     },
     "devDependencies": {
       "@babel/core": "^7.8.6",
@@ -5182,10 +5182,10 @@ Lockfile:
       lodash "^4.17.14"
       prop-types "^15.5.10"
   
-  native-base@^2.13.12:
-    version "2.13.12"
-    resolved "https://registry.yarnpkg.com/native-base/-/native-base-2.13.12.tgz#06020b46019964ddaef3a646ec07e72008018efc"
-    integrity sha512-LdKGNXisbmQ0vDHG86McZKIFTlRyo+OQdJpqmQ05Yf7CGlMbBykJZCFe9rdiee5pLq20xiChe/jXbzFdWcysrg==
+  native-base@2.13.8:
+    version "2.13.8"
+    resolved "https://registry.yarnpkg.com/native-base/-/native-base-2.13.8.tgz#817dfaf74ec63cd17f48991fab452fdc75103db9"
+    integrity sha512-47Wm7bjH5Dc99gBUeVvsURyADU97aiLMLPGX4ewPgR9kW47TD9slS/Y5vGMToBgz1bsku9anXgN2T1rpdQbpFA==
     dependencies:
       blueimp-md5 "^2.5.0"
       clamp "^1.0.1"

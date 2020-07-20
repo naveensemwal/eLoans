@@ -3,15 +3,16 @@ import React, { createContext, useState, useEffect } from 'react';
 export const FormDataContext = createContext();
 
 const initialFormState = {
-    loanAmount: '10000',
+    loanAccountNumber:'',
+    loanAmount: '2500000',
     loanType: 'Home Loan',
     personalDetails: {
-        firstName: '',
-        lastName: '',
+        firstName: 'Naveen',
+        lastName: 'Semwal',
         email: '',
         mobile: '',
-        dateOfBirth: '',
-        panNumber: '',
+        dateOfBirth: '21-02-1988',
+        panNumber: 'DGIPS1231L',
     },
     employmentDetails: {
         companyID: '',
@@ -26,7 +27,7 @@ const initialFormState = {
     aadharFrontImage: '',
     aadharBackImage: '',
     panImage: '',
-
+    supportingDocuments:[]
 }
 
 

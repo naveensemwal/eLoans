@@ -1,13 +1,14 @@
-import { Content, Input, Item, Label, Form } from 'native-base';
+import { Content, Form, Input, Item, Label } from 'native-base';
 import React, { useContext, useState } from 'react';
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View ,  ImageBackground,} from "react-native";
 import { Button } from "react-native-elements";
 import { FormDataContext } from '../../contexts/FormDataContext';
-import Card from '../../components/Card';
+import backGroundImage from "../../assets/images/bubble-loader.gif";
 
 const EmploymentDetailScreen = props => {
-
+    
     const { formData, updateForm, submitForm } = useContext(FormDataContext);
+    const [isLoading, setIsLoading] = useState(false);
     const [employmentDetails, setEmploymentDetails] = useState({
         companyID: '',
         designation: '',
@@ -18,21 +19,61 @@ const EmploymentDetailScreen = props => {
         monthlyTakeHome: 0,
         monthlyEmi: 0
     });
-
+   
     const onNextClick = () => {
         updateForm({ ...formData, employmentDetails });
-        console.log(formData)
-        props.navigation.navigate("SubmitLoan");
+        setIsLoading(true);
+        setTimeout(function () {
+          props.navigation.navigate("EligibilityScreen");
+          setIsLoading(false);
+        }, 1000);
     }
 
-
+    if (isLoading) {
+        return (
+          <View style={styles.container}>
+            <View style={{ flex: 1 }}>
+              <ImageBackground
+                source={backGroundImage}
+                style={styles.backgroundImage}
+              >
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    paddingLeft: 15,
+                    alignSelf: "center",
+                    fontSize: 18,
+                    color: "#0052A2",
+                  }}
+                >
+                  Fetching Eligibility Limit .... 
+                </Text>
+              </ImageBackground>
+            </View>
+          </View>
+        );
+      }
+    
+    
     return (
-        <View style={{ flex: 1, backgroundColor: 'white' }}>
+        <View style={styles.container}>
+            <Text
+        style={{
+          fontFamily: "Roboto",
+          fontWeight: "bold",
+          marginVertical: 15,
+          fontSize: 20,
+          color: "#004d99",
+          alignSelf: "center",
+        }}
+      >
+        EMPLOYMENT DETAILS
+      </Text>
             <Content padder >
-                <Card style={{ backgroundColor: 'white' }}>
+                {/* <Card style={{ backgroundColor: 'white' }}> */}
                     <Form>
                         <Item floatingLabel>
-                            <Label>Company ID</Label>
+                            <Label>Company Name</Label>
                             <Input
                                 onChangeText={value => setEmploymentDetails({ ...employmentDetails, firstName: value })} />
                         </Item>
@@ -76,10 +117,15 @@ const EmploymentDetailScreen = props => {
                         <Button
                             title="Next"
                             style={{ width: 200 }}
+                            linearGradientProps={{
+                                colors: ['#1277DD', '#0052A2'],
+                                start: [1, 0],
+                                end: [0.2, 0],
+                            }}
                             onPress={onNextClick}
                         />
                     </View>
-                </Card>
+                {/* </Card> */}
             </Content>
         </View>
     )
@@ -90,10 +136,16 @@ export default EmploymentDetailScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignContent: "center",
-        justifyContent: "center",
-        backgroundColor: "white",
-    },
+        borderRadius: 6,
+        elevation: 3,
+        backgroundColor: 'white',
+        shadowOffset: { width: 1, height: 1 },
+        shadowColor: '#333',
+        shadowOpacity: 0.3,
+        shadowRadius: 2,
+        marginHorizontal: 4,
+        marginVertical: 6,
+    },    
     nextButtonContainer: {
         flex: 2,
         width: '50%',
@@ -104,6 +156,26 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         overflow: "hidden",
         paddingHorizontal: 30
-    }
+    },
+    backgroundImage: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        padding:10,
+        marginLeft:50,
+        marginTop:200,
+        width:300,
+        height:100,
+    },
+    backgroundImage: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        padding: 10,
+        marginLeft: 50,
+        marginTop: 100,
+        width: 300,
+        height: 300,
+      },
 });
 

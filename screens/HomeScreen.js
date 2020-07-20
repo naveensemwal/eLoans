@@ -1,14 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { ImageBackground } from 'react-native';
-import { Button } from 'react-native-elements';
-import { NavigationContainer } from '@react-navigation/native';
-import backGroundImage from '../assets/images/homeBG.png';
-import { HeaderHeightContext } from '@react-navigation/stack';
-import TouchableScale from 'react-native-touchable-scale';
+import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ListItem } from 'react-native-elements';
-import { hide } from 'expo/build/launch/SplashScreen';
-import { PricingCard } from 'react-native-elements';
+import TouchableScale from 'react-native-touchable-scale';
+import backGroundImage from '../assets/images/Home.png';
+
 
 
 
@@ -16,14 +11,14 @@ const list = [
     {
         id: '1',
         name: 'Initiate Loan',
-        avatar_url: require("../assets/images/term-loan.png"),
+        avatar_url: require("../assets/images/loan_blue.png"),
         subtitle: 'Initiate loan process',
         routeName: 'InitiateCase'
     },
     {
         id: '2',
         name: 'Loan Calculator',
-        avatar_url: require("../assets/images/loanCalculator.png"),
+        avatar_url: require("../assets/images/calculator_blue.png"),
         subtitle: 'Check loan eligibility',
         routeName: 'LoanCalculator'
     },
@@ -45,7 +40,7 @@ const renderItem = ({ item, index, separators }) => {
                     start: [1, 0],
                     end: [0.2, 0],
                 }}
-                leftAvatar={{ rounded: true, source: item.avatar_url, overlayContainerStyle: { backgroundColor: 'white' } }}
+                leftAvatar={{ source: item.avatar_url, overlayContainerStyle: { backgroundColor: 'white' } }}
                 title={item.name}
                 titleStyle={{ color: 'white', fontWeight: 'bold' }}
                 subtitleStyle={{ color: 'white' }}
@@ -70,11 +65,11 @@ const HomeScreen = props => {
                     tension={100} // These props are passed to the parent component (here TouchableScale)
                     activeScale={0.95} //
                     linearGradientProps={{
-                        colors: ['#FF9800', '#F44336'],
+                        colors: ['#1277DD', '#0052A2'],
                         start: [1, 0],
                         end: [0.2, 0],
                     }}
-                    leftAvatar={{ rounded: true, source: item.avatar_url, overlayContainerStyle: { backgroundColor: 'white' } }}
+                    leftAvatar={{ rounded: true,size:'medium', source: item.avatar_url, overlayContainerStyle: { backgroundColor: 'white' } }}
                     title={item.name}
                     titleStyle={{ color: 'white', fontWeight: 'bold' }}
                     subtitleStyle={{ color: 'white' }}
@@ -154,7 +149,8 @@ const styles = StyleSheet.create({
     backgroundImage: {
         flex: 1,
         resizeMode: "cover",
-        justifyContent: "center"
+        justifyContent: "center",
+       
     },
     dashboardContainer: {
         flex: 2
